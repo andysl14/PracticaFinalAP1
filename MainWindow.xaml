@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticaFinalAP1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Normal">
     <Grid>
+
+        <StackPanel>
+            <Menu Height="18">
+                <MenuItem Header="Registros">
+                    <MenuItem x:Name="AmigosMenuItem" Header="Registrar Amigos" >
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/friendship.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="JuegosMenuItem" Header="Registrar Juegos" >
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/game-controller.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="PrestamosMenuItem" Header="Registrar Prestamos de Juegos" >
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/shopping-cart.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="Consultas">
+                    <MenuItem x:Name="AmigosConsultaMenuItem" Header="Consultar Amigos"></MenuItem>
+                    <MenuItem x:Name="JuegosConsultaMenuItem" Header="Consultar Juegos"></MenuItem>
+                    <MenuItem x:Name="PrestamosConsultaMenuItem" Header="Consultar Prestamos"></MenuItem>
+                </MenuItem>
+
+                <MenuItem Header="Ayuda"/>
+            </Menu>
+        </StackPanel>
 
     </Grid>
 </Window>
