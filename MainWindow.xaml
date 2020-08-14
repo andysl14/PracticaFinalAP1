@@ -21,7 +21,7 @@
                             <Image Source="/Resources/game-controller.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem x:Name="PrestamosMenuItem" Header="Registrar Prestamos de Juegos" >
+                    <MenuItem x:Name="PrestamosMenuItem" Header="Registrar Prestamos de Juegos" Click="PrestamosMenuItem_Click" >
                         <MenuItem.Icon>
                             <Image Source="/Resources/shopping-cart.png"/>
                         </MenuItem.Icon>

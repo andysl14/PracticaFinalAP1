@@ -37,5 +37,12 @@ namespace PracticaFinalAP1
             rJuegos rJuegos = new rJuegos();
             rJuegos.Show();
         }
+
+        private void PrestamosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rPrestamos rPrestamos = new rPrestamos();
+            rPrestamos.Show();
+
+        }
     }
 }

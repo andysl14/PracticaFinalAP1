@@ -10,6 +10,8 @@ namespace PracticaFinalAP1.DAL
     {
         public DbSet<Amigos> Amigos { get; set; }
         public DbSet<Juegos> Juegos { get; set; }
+        public DbSet<Prestamos> Prestamos { get; set; }
+        public DbSet<EntradaJuegos> EntradasJuegos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
