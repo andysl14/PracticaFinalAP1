@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="Resources\call.png" />
     <None Remove="Resources\ea.png" />
+    <None Remove="Resources\files-and-folders.png" />
     <None Remove="Resources\find.png" />
     <None Remove="Resources\floppy-disk.png" />
     <None Remove="Resources\friendship.png" />
@@ -24,6 +25,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\ea.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\files-and-folders.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\find.png">

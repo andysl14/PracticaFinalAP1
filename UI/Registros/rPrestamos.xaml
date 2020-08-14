@@ -14,7 +14,7 @@
 
                 <Label Content="Prestamo Id:"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="PrestamoIdTextBox"  Width="100" Height="18" Margin="0,0" />
+                    <TextBox x:Name="PrestamoIdTextBox"  Width="100" Height="18" Margin="0,0" PreviewTextInput="PrestamoIdTextBox_PreviewTextInput"/>
                     <Button x:Name="BuscarButton" Margin="5,0" Click="BuscarButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Resources/find.png" Height="20"/>

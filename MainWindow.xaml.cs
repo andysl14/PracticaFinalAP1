@@ -51,5 +51,11 @@ namespace PracticaFinalAP1
             cAmigos cAmigos = new cAmigos();
             cAmigos.Show();
         }
+
+        private void JuegosConsultaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cJuegos cJuegos = new cJuegos();
+            cJuegos.Show();
+        }
     }
 }

@@ -34,7 +34,11 @@
                             <Image Source="/Resources/call.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem x:Name="JuegosConsultaMenuItem" Header="Consultar Juegos"></MenuItem>
+                    <MenuItem x:Name="JuegosConsultaMenuItem" Header="Consultar Juegos" Click="JuegosConsultaMenuItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/Resources/files-and-folders.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                     <MenuItem x:Name="PrestamosConsultaMenuItem" Header="Consultar Prestamos"></MenuItem>
                 </MenuItem>
 

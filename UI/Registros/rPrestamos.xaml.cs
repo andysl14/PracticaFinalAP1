@@ -3,6 +3,7 @@ using PracticaFinalAP1.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -136,6 +137,22 @@ namespace PracticaFinalAP1.UI.Registros
             if (!Validar())
                 return;
 
+            if (PrestamoIdTextBox.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("El Campo (Préstamo Id) está vacío.\n\nAsigne un ID al Préstamo.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                PrestamoIdTextBox.Text = "0";
+                PrestamoIdTextBox.Focus();
+                PrestamoIdTextBox.SelectAll();
+                return;
+            }
+
+            if (AmigoIdComboBox.Text == string.Empty)
+            {
+                MessageBox.Show("El Campo (Amigo Id) está vacío.\n\nPorfavor, Seleccione El Nombre del Amigo.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                AmigoIdComboBox.IsDropDownOpen = true;
+                return;
+            }
+
             var paso = PrestamosBLL.Guardar(this.prestamos);
 
             if(paso)
@@ -157,6 +174,11 @@ namespace PracticaFinalAP1.UI.Registros
             else
                 MessageBox.Show("No se pudo eliminar el registro", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
+        }
+
+        private void PrestamoIdTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
         }
     }
 }
