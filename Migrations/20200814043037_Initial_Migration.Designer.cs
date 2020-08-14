@@ -9,7 +9,7 @@ using PracticaFinalAP1.DAL;
 namespace PracticaFinalAP1.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200814015453_Initial_Migration")]
+    [Migration("20200814043037_Initial_Migration")]
     partial class Initial_Migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,7 +69,7 @@ namespace PracticaFinalAP1.Migrations
 
                     b.HasIndex("JuegoId");
 
-                    b.ToTable("EntradasJuegos");
+                    b.ToTable("EntradaJuegos");
                 });
 
             modelBuilder.Entity("PracticaFinalAP1.Entidades.Juegos", b =>

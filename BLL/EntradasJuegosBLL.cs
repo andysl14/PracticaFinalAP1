@@ -6,42 +6,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
-using System.Windows;
 
 namespace PracticaFinalAP1.BLL
 {
-    public class JuegosBLL
+    public class EntradasJuegosBLL
     {
-        private static bool Insertar(Juegos juegos)
+        private static bool Insertar(EntradaJuegos entradajuegos)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
 
             try
             {
-                contexto.Juegos.Add(juegos);
-                paso = contexto.SaveChanges() > 0;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-            }
-
-            return paso;
-        }
-
-        public static bool Modificar(Juegos juegos)
-        {
-            bool paso = false;
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                contexto.Entry(juegos).State = EntityState.Modified;
+                contexto.EntradaJuegos.Add(entradajuegos);
                 paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
@@ -63,7 +40,7 @@ namespace PracticaFinalAP1.BLL
 
             try
             {
-                encontrado = contexto.Juegos.Any(e => e.JuegoId == id);
+                encontrado = contexto.EntradaJuegos.Any(e => e.EntradaId == id);
             }
             catch (Exception)
             {
@@ -77,12 +54,34 @@ namespace PracticaFinalAP1.BLL
             return encontrado;
         }
 
-        public static bool Guardar(Juegos juegos)
+        public static bool Modificar(EntradaJuegos entradajuegos)
         {
-            if (!Existe(juegos.JuegoId))
-                return Insertar(juegos);
+            bool paso = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                contexto.Entry(entradajuegos).State = EntityState.Modified;
+                paso = contexto.SaveChanges() > 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return paso;
+        }
+
+        public static bool Guardar(EntradaJuegos entradajuegos)
+        {
+            if (!Existe(entradajuegos.EntradaId))
+                return Insertar(entradajuegos);
             else
-                return Modificar(juegos);
+                return Modificar(entradajuegos);
         }
 
         public static bool Eliminar(int id)
@@ -92,10 +91,10 @@ namespace PracticaFinalAP1.BLL
 
             try
             {
-                var juegos = contexto.Juegos.Find(id);
-                if (juegos != null)
+                var entradajuegos = contexto.EntradaJuegos.Find(id);
+                if (entradajuegos != null)
                 {
-                    contexto.Juegos.Remove(juegos);
+                    contexto.EntradaJuegos.Remove(entradajuegos);
                     paso = contexto.SaveChanges() > 0;
                 }
             }
@@ -111,14 +110,14 @@ namespace PracticaFinalAP1.BLL
             return paso;
         }
 
-        public static Juegos Buscar(int id)
+        public static EntradaJuegos Buscar(int id)
         {
             Contexto contexto = new Contexto();
-            Juegos juegos;
+            EntradaJuegos entradajuegos;
 
             try
             {
-                juegos = contexto.Juegos.Find(id);
+                entradajuegos = contexto.EntradaJuegos.Find(id);
             }
             catch (Exception)
             {
@@ -129,17 +128,17 @@ namespace PracticaFinalAP1.BLL
                 contexto.Dispose();
             }
 
-            return juegos;
+            return entradajuegos;
         }
 
-        public static List<Juegos> GetList(Expression<Func<Juegos, bool>> criterio)
+        public static List<EntradaJuegos> GetList(Expression<Func<EntradaJuegos, bool>> criterio)
         {
-            List<Juegos> lista = new List<Juegos>();
+            List<EntradaJuegos> lista = new List<EntradaJuegos>();
             Contexto contexto = new Contexto();
 
             try
             {
-                lista = contexto.Juegos.Where(criterio).ToList();
+                lista = contexto.EntradaJuegos.Where(criterio).ToList();
             }
             catch (Exception)
             {
@@ -153,16 +152,16 @@ namespace PracticaFinalAP1.BLL
             return lista;
         }
 
-        public static List<Juegos> GetJuegos()
+        public static List<EntradaJuegos> GetEntradaJuegos()
         {
-            List<Juegos> lista = new List<Juegos>();
+            List<EntradaJuegos> lista = new List<EntradaJuegos>();
             Contexto contexto = new Contexto();
 
             try
             {
-                lista = contexto.Juegos.ToList();
+                lista = contexto.EntradaJuegos.ToList();
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
@@ -172,34 +171,7 @@ namespace PracticaFinalAP1.BLL
             }
 
             return lista;
-
         }
 
-        public static void SalidaJuegos(int id, int cantidad)
-        {
-            Juegos juegos = Buscar(id);
-
-            juegos.Existencia += cantidad;
-
-            Modificar(juegos);
-        }
-
-        public static void RestarSalidaLibros(int id, int cantidad)
-        {
-            Juegos juegos = Buscar(id);
-
-            juegos.Existencia -= cantidad;
-
-            if (juegos.Existencia >= 0)
-            {
-                Modificar(juegos);
-            }
-            else
-            {
-                
-                MessageBox.Show("No puedes dar salida a esta catidad de libros, porque es menor que 0.\n\nVerifique la existencia actual del libro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-        }
     }
 }

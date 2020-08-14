@@ -26,6 +26,7 @@
                             <Image Source="/Resources/shopping-cart.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem x:Name="EntradaJuegosMenuItem" Header="Registrar Entrada de Juegos" Click="EntradaJuegosMenuItem_Click"/>
                 </MenuItem>
 
                 <MenuItem Header="Consultas">

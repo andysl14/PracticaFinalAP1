@@ -57,5 +57,11 @@ namespace PracticaFinalAP1
             cJuegos cJuegos = new cJuegos();
             cJuegos.Show();
         }
+
+        private void EntradaJuegosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rEntradaJuegos rEntradaJuegos = new rEntradaJuegos();
+            rEntradaJuegos.Show();
+        }
     }
 }

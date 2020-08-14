@@ -65,7 +65,7 @@ namespace PracticaFinalAP1.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "EntradasJuegos",
+                name: "EntradaJuegos",
                 columns: table => new
                 {
                     EntradaId = table.Column<int>(nullable: false)
@@ -76,9 +76,9 @@ namespace PracticaFinalAP1.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EntradasJuegos", x => x.EntradaId);
+                    table.PrimaryKey("PK_EntradaJuegos", x => x.EntradaId);
                     table.ForeignKey(
-                        name: "FK_EntradasJuegos_Juegos_JuegoId",
+                        name: "FK_EntradaJuegos_Juegos_JuegoId",
                         column: x => x.JuegoId,
                         principalTable: "Juegos",
                         principalColumn: "JuegoId",
@@ -113,8 +113,8 @@ namespace PracticaFinalAP1.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_EntradasJuegos_JuegoId",
-                table: "EntradasJuegos",
+                name: "IX_EntradaJuegos_JuegoId",
+                table: "EntradaJuegos",
                 column: "JuegoId");
 
             migrationBuilder.CreateIndex(
@@ -136,7 +136,7 @@ namespace PracticaFinalAP1.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "EntradasJuegos");
+                name: "EntradaJuegos");
 
             migrationBuilder.DropTable(
                 name: "PrestamosDetalle");

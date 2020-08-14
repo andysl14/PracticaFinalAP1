@@ -67,7 +67,7 @@ namespace PracticaFinalAP1.Migrations
 
                     b.HasIndex("JuegoId");
 
-                    b.ToTable("EntradasJuegos");
+                    b.ToTable("EntradaJuegos");
                 });
 
             modelBuilder.Entity("PracticaFinalAP1.Entidades.Juegos", b =>

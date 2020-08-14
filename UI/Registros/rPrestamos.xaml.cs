@@ -96,7 +96,8 @@ namespace PracticaFinalAP1.UI.Registros
                 JuegoId = Convert.ToInt32(JuegoIdComboBox.SelectedValue.ToString()),
 
                 juegos = (Juegos)JuegoIdComboBox.SelectedItem,
-                Cantidad = (int)Convert.ToSingle(CantidadTextBox.Text)
+                Cantidad = Convert.ToInt32(CantidadTextBox.Text),
+                
             };
 
             prestamos.CantidadJuegos += Convert.ToDouble(CantidadTotalTextBox.Text.ToString());

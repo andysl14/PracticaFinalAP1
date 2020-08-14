@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200814015453_Initial_Migration.cs" />
+    <Compile Remove="Migrations\20200814015453_Initial_Migration.Designer.cs" />
+    <Compile Remove="Migrations\20200814042914_Second_Migration.cs" />
+    <Compile Remove="Migrations\20200814042914_Second_Migration.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\call.png" />
     <None Remove="Resources\ea.png" />
     <None Remove="Resources\files-and-folders.png" />
