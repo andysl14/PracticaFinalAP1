@@ -5,8 +5,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticaFinalAP1.UI.Consultas"
         mc:Ignorable="d"
-        Title="cAmigos" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Normal">
+        Title="cAmigos" Height="480" Width="680" WindowStartupLocation="CenterScreen" WindowState="Normal" Icon="/Resources/call.png">
     <Grid>
-        
+
+        <StackPanel Orientation="Vertical" Margin="0,5,0,0" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Height="60">
+                
+                <StackPanel>
+                    <Label Content="Desde:"/>
+                    <DatePicker x:Name="DesdeDatePicker" Margin="0,0,15,0" />
+                </StackPanel>
+                
+                <StackPanel Orientation="Vertical" Margin="0,0,20,0" >
+                    <Label Content="Hasta:" />
+                    <DatePicker x:Name="HastaDatePicker"/>
+                </StackPanel>
+                
+                <StackPanel  Margin="0,0,10,0" >
+                    <Label Content="Filtro:" />
+                    <ComboBox x:Name="FiltroComboBox" Width="95" Height="24" >
+                        <ComboBoxItem Content="Amigo id"/>
+                        <ComboBoxItem Content="Nombres"/>
+                        <ComboBoxItem Content="Apellidos"/>
+                        <ComboBoxItem Content="Direccion"/>
+                        <ComboBoxItem Content="Telefono"/>
+                        <ComboBoxItem Content="Celular"/>
+                        <ComboBoxItem Content="Email"/>
+                    </ComboBox>
+                </StackPanel>
+                
+                <StackPanel Margin="5,0">
+                    <Label Content="Critero:"/>
+                    <TextBox x:Name="CriterioTextBox" Width="95" Height="24" Margin="0,0,10,0" VerticalContentAlignment="Center" />
+                </StackPanel>
+                
+                <Button x:Name="ConsultarButton" Height="30" Width="90" Click="ConsultarButton_Click">
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Source="/Resources/find.png"/>
+                        <Label Content="Consultar"/>
+                    </StackPanel>
+                </Button>
+                
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Width="635" >
+                <DataGrid x:Name="DatosDataGrid" Height="330" IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="Gainsboro" TextBlock.TextAlignment="Center">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Amigo Id" Binding="{Binding AmigoId}"/>
+                        <DataGridTextColumn Header="Nombres" Binding="{Binding Nombres}"/>
+                        <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}"/>
+                        <DataGridTextColumn Header="Direccion" Binding="{Binding Direccion}"/>
+                        <DataGridTextColumn Header="Telefono" Binding="{Binding Telefono, StringFormat='(###) ###-####'}"/>
+                        <DataGridTextColumn Header="Celular" Binding="{Binding Celular, StringFormat='(###) ###-####'}"/>
+                        <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                        <DataGridTextColumn Header="Fecha de Nacimiento" Binding="{Binding FechaNacimiento, StringFormat='dd/MM/yyyy'}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+           
+        </StackPanel>
+
     </Grid>
 </Window>

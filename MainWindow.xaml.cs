@@ -1,4 +1,5 @@
-﻿using PracticaFinalAP1.UI.Registros;
+﻿using PracticaFinalAP1.UI.Consultas;
+using PracticaFinalAP1.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,12 @@ namespace PracticaFinalAP1
             rPrestamos rPrestamos = new rPrestamos();
             rPrestamos.Show();
 
+        }
+
+        private void AmigosConsultaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cAmigos cAmigos = new cAmigos();
+            cAmigos.Show();
         }
     }
 }
