@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PracticaFinalAP1.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,18 @@ namespace PracticaFinalAP1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void AmigosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rAmigos rAmigos = new rAmigos();
+            rAmigos.Show();
+        }
+
+        private void JuegosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rJuegos rJuegos = new rJuegos();
+            rJuegos.Show();
         }
     }
 }

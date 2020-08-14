@@ -9,6 +9,7 @@ namespace PracticaFinalAP1.DAL
     public class Contexto : DbContext
     {
         public DbSet<Amigos> Amigos { get; set; }
+        public DbSet<Juegos> Juegos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

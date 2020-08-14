@@ -45,7 +45,6 @@
     <Folder Include="DATA\" />
     <Folder Include="Migrations\" />
     <Folder Include="UI\Consultas\" />
-    <Folder Include="UI\Registros\" />
   </ItemGroup>
 
   <ItemGroup>

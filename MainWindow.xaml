@@ -11,12 +11,12 @@
         <StackPanel>
             <Menu Height="18">
                 <MenuItem Header="Registros">
-                    <MenuItem x:Name="AmigosMenuItem" Header="Registrar Amigos" >
+                    <MenuItem x:Name="AmigosMenuItem" Header="Registrar Amigos" Click="AmigosMenuItem_Click" >
                         <MenuItem.Icon>
                             <Image Source="/Resources/friendship.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem x:Name="JuegosMenuItem" Header="Registrar Juegos" >
+                    <MenuItem x:Name="JuegosMenuItem" Header="Registrar Juegos" Click="JuegosMenuItem_Click" >
                         <MenuItem.Icon>
                             <Image Source="/Resources/game-controller.png"/>
                         </MenuItem.Icon>
