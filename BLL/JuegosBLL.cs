@@ -197,7 +197,7 @@ namespace PracticaFinalAP1.BLL
             else
             {
                 
-                MessageBox.Show("No puedes dar salida a esta catidad de libros, porque es menor que 0.\n\nVerifique la existencia actual del libro.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                
                 return;
             }
         }
