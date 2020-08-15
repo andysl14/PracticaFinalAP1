@@ -197,7 +197,7 @@ namespace PracticaFinalAP1.BLL
             else
             {
                 
-                
+                MessageBox.Show("No puedes Disminuir, porque es menor que 0.\n\nVerifique la existencia actual del Juego.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
         }
