@@ -175,7 +175,7 @@ namespace PracticaFinalAP1.BLL
 
         }
 
-        public static void SalidaJuegos(int id, int cantidad)
+        public static void EntradaJuegos(int id, int cantidad)
         {
             Juegos juegos = Buscar(id);
 
@@ -184,7 +184,7 @@ namespace PracticaFinalAP1.BLL
             Modificar(juegos);
         }
 
-        public static void RestarSalidaLibros(int id, int cantidad)
+        public static void RestarEntradaJuegos(int id, int cantidad)
         {
             Juegos juegos = Buscar(id);
 

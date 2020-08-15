@@ -14,7 +14,7 @@
                 <Label Content="Entrada Id:" Height="28" />
                 <StackPanel Orientation="Horizontal" >
                     <TextBox x:Name="EntradaIdTextBox" Margin="5,0" Text="" Width="80"  Height="26" PreviewTextInput="EntradaIdTextBox_PreviewTextInput"/>
-                    <Button x:Name="BuscarButton" Margin="2,0" >
+                    <Button x:Name="BuscarButton" Margin="2,0" Click="BuscarButton_Click" >
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Resources/find.png" Height="20" Width="31"  />
                             <Label Content="Buscar" Height="26" FontSize="14"/>

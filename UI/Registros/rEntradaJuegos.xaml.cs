@@ -121,7 +121,7 @@ namespace PracticaFinalAP1.UI.Registros
                 }
                 
 
-                JuegosBLL.SalidaJuegos(Convert.ToInt32(JuegoIdComboBox.SelectedValue), Convert.ToInt32(CantidadTextBox.Text)); //-----------------
+                JuegosBLL.EntradaJuegos(Convert.ToInt32(JuegoIdComboBox.SelectedValue), Convert.ToInt32(CantidadTextBox.Text)); //-----------------
 
                 var paso = EntradasJuegosBLL.Guardar(entradaJuegos);
                 if (paso)
@@ -139,7 +139,7 @@ namespace PracticaFinalAP1.UI.Registros
             
                 if (EntradasJuegosBLL.Eliminar(Utilidades.ToInt(EntradaIdTextBox.Text)))
                 {
-                    JuegosBLL.RestarSalidaLibros(Convert.ToInt32(JuegoIdComboBox.SelectedValue), Convert.ToInt32(CantidadTextBox.Text)); //-----------------
+                    JuegosBLL.RestarEntradaJuegos(Convert.ToInt32(JuegoIdComboBox.SelectedValue), Convert.ToInt32(CantidadTextBox.Text)); //-----------------
                     Limpiar();
                     MessageBox.Show("Registro Eliminado", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
