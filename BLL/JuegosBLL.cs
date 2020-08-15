@@ -184,7 +184,7 @@ namespace PracticaFinalAP1.BLL
             Modificar(juegos);
         }
 
-        public static void RestarEntradaJuegos(int id, int cantidad)
+        public static void DisminuirEntradaJuegos(int id, int cantidad)
         {
             Juegos juegos = Buscar(id);
 
