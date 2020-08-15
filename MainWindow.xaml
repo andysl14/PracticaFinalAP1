@@ -40,7 +40,7 @@
                             <Image Source="/Resources/files-and-folders.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem x:Name="PrestamosConsultaMenuItem" Header="Consultar Prestamos"></MenuItem>
+                    <MenuItem x:Name="PrestamosConsultaMenuItem" Header="Consultar Prestamos" Click="PrestamosConsultaMenuItem_Click"></MenuItem>
                 </MenuItem>
 
                 <MenuItem Header="Ayuda"/>

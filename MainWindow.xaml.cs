@@ -63,5 +63,11 @@ namespace PracticaFinalAP1
             rEntradaJuegos rEntradaJuegos = new rEntradaJuegos();
             rEntradaJuegos.Show();
         }
+
+        private void PrestamosConsultaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cPrestamos cPrestamos = new cPrestamos();
+            cPrestamos.Show();
+        }
     }
 }
